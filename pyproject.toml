@@ -4,4 +4,10 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pandapower>=3.1.2",
+    "streamlit>=1.45.1",
+    "torch>=2.7.1",
+    "torch-geometric>=2.6.1",
+    "tqdm>=4.67.1",
+]
