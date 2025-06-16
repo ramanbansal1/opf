@@ -1,5 +1,5 @@
 # 🔌 GNN-Based Optimal Power Flow (OPF) Solver
-
+<img src="assests/Screenshot.png" alt="OPF" width="400">
 A deep learning framework for solving the Optimal Power Flow (OPF) problem using Graph Neural Networks (GNNs). This project leverages power system physics, graph structures, and modern GNN architectures to predict optimal power flow solutions with high accuracy and generalizability.
 
 ## 🧠 Overview
