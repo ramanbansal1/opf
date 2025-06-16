@@ -52,8 +52,6 @@ class PowerGridGNN(nn.Module):
         return x
 # Initialize and test the model
 
-# Initialize and test the model
-
 def extract_data(net : pp.auxiliary.pandapowerNet):
     X = pd.DataFrame()
 
@@ -98,7 +96,6 @@ def extract_data(net : pp.auxiliary.pandapowerNet):
     edge_index = torch.tensor(list(zip(net.line["from_bus"], net.line["to_bus"])), dtype=torch.long).T
 
     pp.runopp(net)
-
     Y['v_kv'] = net.res_bus["vm_pu"] * net.bus['vn_kv']
 
     Y['angle'] = net.res_bus["va_degree"]
@@ -131,7 +128,7 @@ if btn:
 
     data = Data(x=X, edge_index=edge_index, edge_attr=edge_attr.T, y=y)
     model = PowerGridGNN(in_features=8, hidden_dim=16, out_features=2)
-    model.load_state_dict(torch.load('../models/model_state.pth', weights_only=True))
+    model.load_state_dict(torch.load('models/model_state.pth', weights_only=True))
     Y = model(data)
 
     from pandapower.plotting.plotly import create_bus_trace, create_line_trace
